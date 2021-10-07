@@ -1,1 +1,1 @@
-# Di-Bootcamp
+# DI-Bootcamp
