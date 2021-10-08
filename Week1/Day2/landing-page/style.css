@@ -1,0 +1,28 @@
+#div2 {
+	background-image: url(https://images.pexels.com/photos/37487/pexels-photo-37487.jpeg?auto=compress&cs=tinysrgb&h=650&w=940);
+	margin-top: 0px; 
+    text-align: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 500px;
+
+}
+div h1 {
+	margin-top: 0px;
+	color: white;
+}
+#div2 {
+	padding-top: 150px;
+}
+#contiuner {
+	display: inline-flex;
+	background-color: lightgrey;
+	width: 100%;
+
+}
+#sec {
+	width: 33%;
+	padding: 10px;
+	text-align: center;
+}
