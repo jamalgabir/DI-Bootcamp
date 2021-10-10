@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   width: 300px;
@@ -6,10 +9,30 @@
   font-family: arial;
   margin: 15px;
 }
+.card:hover .divimg img{
+  opacity: 1;
+   
+
+}
+.add{
+  color: white;
+  font-size: 14px;
+  width: 80px;
+  height: 20px;
+  text-align: center;
+  position: absolute;
+  background-color:black;
+  border-radius: 3px;
+  margin-top: -20px;
+  margin-left: -25px;
+  opacity: 0;
+  transition:.5s ease;
+
+}
 .card img {
   width: 300px;
   height: 300px;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
 }
 /*.pag {
   position: absolute;
@@ -44,10 +67,14 @@
   height: 50px;
   position: absolute;
   display: flex;
+  
 
 }
-.divimg img: hover {
-  background-color: red;
+.divimg img:hover {
+  width: 40px;
+  height: 40px;
+  
+
 }
 
 .divimg img{
@@ -55,6 +82,9 @@
   margin: 9px;
   width: 30px;
   height: 30px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: .3s ease;
 }
 .span1 {
   position: absolute;
