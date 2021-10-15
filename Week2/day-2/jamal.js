@@ -1,4 +1,4 @@
-let userName = "gabir";
+
 
 /*switch(userName){
 	case "jamal":
@@ -63,7 +63,33 @@ let shopping = ["apple", "pear", "melon", "banana"];
 let addcha = shopping.split(-1,"s");
 console.log(addcha);
 let arr = [1, 4, 7, 10]
-    for (let i=0; i<arr.length; i++) {
-        console.log(arr[i]);
-    }
+for (let i=0; i<arr.length; i++) {
+    console.log(arr[i]);
+}
 
+
+let guestList = {
+	germany : "randy",
+	spain : "lonardo",
+	france : "kala",
+}
+	
+for (let country in guestList){
+
+	console.log(guestList[country])
+	guestList[country] = "lise"
+}
+if (country==="germany"){
+	guestList[country] = "lise";
+}	
+	
+//key
+if (country.includes("r")){
+	guestList[country] = "lise";
+}
+
+// // value
+if (guestList[country].includes("r")){
+   guestList[country] = "lise";
+}
+console.log(guestList)
