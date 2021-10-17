@@ -3,33 +3,76 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="css/style.css">
     <style>
+      body{
+        text-align: center;
+        padding-top: 100px;
+        background-color: moccasin;
+      }
       button {
         width:70px;
         height:70px;
+        margin: 2px;
+        cursor: pointer;
+        background-color: rgb(255, 196, 0);
+        font-size: larger;
+        border-radius: 8px;
+
+      }
+      .rest{
+        background-color: rgb(0, 56, 240);
+        
+        width: 150px;
+      }
+      .clear{
+        width: 150px;
+        background-color: red;
+      }
+      button:hover{
+        background-color: gray;
+      }
+      .number:hover{
+        background-color: grey;
+
+      }
+      #hold{
+        width: 295px;
+        height: 40px;
+        border: 1px solid lightgreen;
+        text-align: right;
+        font-size: larger;
+        background-color: white;
+      }
+      .number{
+        background-color: rgb(86, 243, 217);
       }
     </style>
   </head>
   <body>
-    <button type="button" name="button" onclick="number(1);">1</button>
-    <button type="button" name="button" onclick="number(2);">2</button>
-    <button type="button" name="button" onclick="number(3);">3</button>
+    <input type="text" id="hold" value="" disabled />
     <br>
-    <button type="button" name="button" onclick="number(4);">4</button>
-    <button type="button" name="button" onclick="number(5);">5</button>
-    <button type="button" name="button" onclick="number(6);">6</button>
+    <button class="btn number" type="button" name="button" onclick="number(0);">0</button>
+    <button class="btn number" type="button" name="button" onclick="number(1);">1</button>
+    <button class="btn number" type="button" name="button" onclick="number(2);">2</button>
+    <button class="btn number" type="button" name="button" onclick="number(3);">3</button>
     <br>
-    <button type="button" name="button" onclick="number(7);">7</button>
-    <button type="button" name="button" onclick="number(8);">8</button>
-    <button type="button" name="button" onclick="number(9);">9</button>
-    <button type="button" name="button" onclick="number(0);">0</button>
+    <button class="btn number" type="button" name="button" onclick="number(4);">4</button>
+    <button class="btn number" type="button" name="button" onclick="number(5);">5</button>
+    <button class="btn number" type="button" name="button" onclick="number(6);">6</button>
+    <button class="btn number" type="button" name="button" onclick="number(7);">7</button>
     <br>
-    <button type="button" name="button" onclick="operator('+');">+</button>
-    <button type="button" name="button" onclick="operator('-');">-</button>
-    <button type="button" name="button" onclick="operator('*');">*</button>
-    <button type="button" name="button" onclick="operator('/');">/</button>
+    <button class="btn number" type="button" name="button" onclick="number(8);">8</button>
+    <button class="btn number" type="button" name="button" onclick="number(9);">9</button>
+    <button class="btn number" type="button" name="button" onclick="number('.');">.</button>
+    <button type="button" name="button" onclick="number('+');">+</button>
+    <br>
+    <button type="button" name="button" onclick="number('-');">-</button>
+    <button type="button" name="button" onclick="number('*');">X</button>
+    <button type="button" name="button" onclick="number('/');">/</button>
     <button type="button" name="button" onclick="equal();">=</button>
-    <script src="js/main.js" charset="utf-8"></script>
+    <br>
+    <button class="rest" type="button" name="button" onclick="rest()">Rest</button>
+    <button class="clear" type="button" name="button" onclick="clr()">Clear</button>
+    <script src="calculator.js" charset="utf-8"></script>
   </body>
 </html>
