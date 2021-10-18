@@ -22,15 +22,64 @@ function addStudents(){
 
 addStudents();
 */
-let mycontainer = document.getElementsByClassName("listPlanets");
-
-mycontainer.appendChild(newDiv)
-console.log(mycontainer);
-for(let index=1;index<=8;index++){
-    let newDiv = document.createElement("div");
-    newDiv.setAttribute("class","planet");
-    newDiv.style.backgroundColor = "green";
-
+let solar = [
+  {
+    name: "Mercury",
+    moon: 0,
+    color: "Grey",
+  },
+  {
+    name: "Venus",
+    moon: 0,
+    color: "Brown",
+  },
+  {
+    name: "Earth",
+    moon: 1,
+    color: "lightBlue",
+  },
+  {
+    name: "Mars",
+    moon: 2,
+    color: "Red",
+  },
+  {
+    name: "Jupiter",
+    moon: 79,
+    color: "orange",
+  },
+  {
+    name: "Saturn",
+    moon: 82,
+    color: "Gold",
+  },
+  {
+    name: "Uranus",
+    moon: 27,
+    color: "green",
+  },
+  {
+    name: "Neptune",
+    moon: 14,
+    color: "Blue",
+  },
+];
+let main = document.querySelector(".listPlanets");
+console.log(main);
+for (let item of solar) {
+  let newDiv = document.createElement("div");
+  let newText = document.createTextNode(item.name);
+  newDiv.appendChild(newText);
+  newDiv.classList.add("planet");
+  newDiv.style.backgroundColor = item.color;
+  for (let i = 0; i < item.moon; i++) {
+    let newMoon = document.createElement("div");
+    newMoon.classList.add("moon");
+    let newText2 = document.createTextNode(i + 1);
+    newMoon.appendChild(newText2);
+    newDiv.appendChild(newMoon);
+  }
+  main.appendChild(newDiv);
 }
     
     

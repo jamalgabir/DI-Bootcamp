@@ -9,17 +9,17 @@
         <button id="jsstyle">Style</button>
     </div> 
     <script type="text/javascript">
-    let amazonBasket = {
-    glasses: 1,
-    books: 2,
-    floss: 100
-    }
-    function checkBasket(i){
-	    for(i in amazonBasket){
-		   console.log(`you have: ${amazonBasket[i]} ${i}`);
-	    }
-    }
-checkBasket(amazonBasket);
+    let newArray = [2, 3, 4, 5, 6]; 
+
+newArray.forEach(function(number, i) { 
+    newArray[i] = newArray[i]*2; 
+}); 
+
+//let newArray = [2, 3, 4, 5, 6]; 
+console.log(newArray);
+newArray.forEach(function(number, i) { 
+    newArray[i] = number * 2; 
+}); 
    </script>
 </body>
 </html>
