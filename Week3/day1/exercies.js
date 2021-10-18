@@ -14,13 +14,24 @@ a paragraph
 3. Add the 3 paragraph to the div already on the page
 */
 let names = ["John", "Lola", "Tom"];
-let container = document.getElementById("container");
-//console.log(container);
-let p = document.createElement("p");
-container.appendChild(p);
-for(let name of names){
-    let text = document.createTextNode(names[0])
-    p.appendChild(text);
+let divContainer = document.getElementById('container'); 
 
+
+function addStudents(){
+	//create a paragraph PER name
+	for (let index = 0; index<names.length; index++){
+		// create a paragraph
+		let newP = document.createElement("p");
+		// create a text node, with the value = to the name of the student
+		let newText = document.createTextNode(names[index]);
+		// style the paragraph
+		newP.style.backgroundColor = "yellow";
+		newP.style.fontSize = "25px";
+		// add the newText to the newP
+		newP.appendChild(newText)
+		// add the newP to the divcontainer
+		divContainer.appendChild(newP);
+	}
 }
-//console.log(p)
+
+addStudents();

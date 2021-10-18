@@ -1,5 +1,39 @@
-let parent = document.getElementsByClassName("listPlanets");
-let newDiv = document.createElement("div");
-let newText = document.createTextNode("greate job jamal");
-newDiv.appendChild(newText);
-document.body[0].appendChild(newDiv);
+/*
+let names = ["John", "Lola", "Tom"];
+let divContainer = document.getElementById('container'); 
+
+
+function addStudents(){
+	//create a paragraph PER name
+	for (let index = 0; index<names.length; index++){
+		// create a paragraph
+		let newP = document.createElement("p");
+		// create a text node, with the value = to the name of the student
+		let newText = document.createTextNode(names[index]);
+		// style the paragraph
+		newP.style.backgroundColor = "yellow";
+		newP.style.fontSize = "25px";
+		// add the newText to the newP
+		newP.appendChild(newText)
+		// add the newP to the divcontainer
+		divContainer.appendChild(newP);
+	}
+}
+
+addStudents();
+*/
+let mycontainer = document.getElementsByClassName("listPlanets");
+
+mycontainer.appendChild(newDiv)
+console.log(mycontainer);
+for(let index=1;index<=8;index++){
+    let newDiv = document.createElement("div");
+    newDiv.setAttribute("class","planet");
+    newDiv.style.backgroundColor = "green";
+
+}
+    
+    
+
+
+

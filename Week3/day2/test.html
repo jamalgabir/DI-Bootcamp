@@ -1,0 +1,25 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<div>
+        <button id="jsstyle">Style</button>
+    </div> 
+    <script type="text/javascript">
+    let amazonBasket = {
+    glasses: 1,
+    books: 2,
+    floss: 100
+    }
+    function checkBasket(i){
+	    for(i in amazonBasket){
+		   console.log(`you have: ${amazonBasket[i]} ${i}`);
+	    }
+    }
+checkBasket(amazonBasket);
+   </script>
+</body>
+</html>
