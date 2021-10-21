@@ -9,14 +9,23 @@ body{
 	top: 5px;
 	left: 5px;
 	cursor: pointer;
+	background-color: lightblue;
 }
 .diva{
     display: inline-block;
     height: 160px;
     width: 160px;
     margin: 10px;
-    border: 2px salmon solid;
+    border: 3px salmon solid;
     background-color: white;
-
-
+}
+.hold{
+	border: solid #ccc 4px;
+}
+.hovered{
+	background: #f4f4f4;
+	border-style: dashed;
+}
+.invisible{
+	display: none;
 }
