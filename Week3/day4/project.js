@@ -1,125 +1,96 @@
-let sideb = document.getElementById("sidebar");
+let colorMenu = document.getElementById("colorMenu");
 let main = document.getElementById("main");
+let content = document.getElementById("content");
+let clearBtn = document.getElementById("clearBtn");
+let sideBar = document.getElementById("sideBar");
+var myColor;
+var flagMouse;
 
+let setColor = (event) => {
+  myColor = event.target.style.background;
+  console.log("setting color");
+};
 
+let clickIn = () => {
+  flagMouse = true;
+};
+let clickOut = () => {
+  flagMouse = false;
+};
 
+const createElementColor = (tag, color, location) => {
+  let newTag = document.createElement(tag);
+  newTag.style.background = color;
+  newTag.addEventListener("click", setColor);
 
-for(let i=0; i<21;i++){
-	let newdiv = document.createElement("div");
-	let myarray= ["red","orangered","orange","yellow","yellowgreen",
-    "lightgreen","green","turquoies","cyan","lightskyblue",
-    "dodgerblue","blue","darkblue","indigo","darmagenta","violet","lightpink",
-    "lightgray","gray","black","white"];
-	for(arr of myarray){
-	    newdiv.style.backgroundColor = arr;
-	}
-	 
+  location.appendChild(newTag);
+};
 
-	sideb.appendChild(newdiv);
+main.addEventListener("mousedown", clickIn);
+main.addEventListener("mouseup", clickOut);
 
-}
+let colorArray = [
+  "red",
+  "orangered",
+  "orange",
+  "yellow",
+  "yellowgreen",
+  "lightgreen",
+  "green",
+  "turquoise",
+  "cyan",
+  "lightskyblue",
+  "dodgerblue",
+  "blue",
+  "darkblue",
+  "indigo",
+  "darkmagenta",
+  "violet",
+  "lightpink",
+  "lightgray",
+  "gray",
+  "black",
+  "white",
+];
 
-for(let i = 0; i<60;i++){
-	let newdi = document.createElement("div");
-	main.appendChild(newdi)
-
-}
-////////////////////////////////////////
-let color = null;
-let mousedown = false;
-
-let myarray= ["red","orangered","orange","yellow","yellowgreen",
-"lightgreen","green","turquoies","cyan","lightskyblue",
-"dodgerblue","blue","darkblue","indigo","darmagenta","violet","lightpink",
-"lightgray","gray","black","white"];
-
-
-let body = document.getElementsByTagName("body")[0];
-let color_blocks = document.querySelectorAll("#sidebar > *");
-let fill_blocks = document.querySelectorAll("#main > *");
-let clear_button = document.getElementsByTagName("button")[0];
-console.log(color_blocks);
-
-
-// for(let colo of myarray){
-// 	for(let i = 0;i<myarray.length;i++){
-// 		color_blocks.style.backgroundColor = colo;
-// 	}
-
-    
-//     // console.log(colo);
-
-// }
-
-clear_button.addEventListener("click", function(){
-    for (fill_block of fill_blocks){
-        fill_block.style.backgroundColor = "white";
-    }
+colorArray.forEach((v) => {
+  console.log(v);
+  createElementColor("div", v, colorMenu);
 });
 
-body.addEventListener("mousedown", function(){
-    mousedown = true;
-})
+let paintC = (event) => {
+  event.target.style.background = myColor;
+  console.log(myColor);
+  console.log(event.target.style.background);
+  console.log("change paint");
+};
 
-body.addEventListener("mouseup", function(){
-    mousedown = false;
-})
+let paintO = (event) => {
+  if (flagMouse) {
+    event.target.style.background = myColor;
+  }
+};
 
+const createElement = (tag, location) => {
+  newTag = document.createElement(tag);
+  newTag.classList.add("board");
+  newTag.addEventListener("click", paintC);
+  newTag.addEventListener("mouseover", paintO);
+  location.appendChild(newTag);
+};
 
-for (color_block of color_blocks){
-    color_block.addEventListener("click", function(event){
-        color = event.target.style.backgroundColor;
-    });
+for (let i = 0; i < 60 * 24; i++) {
+  createElement("div", content);
 }
 
-for (fill_block of fill_blocks){
-    fill_block.addEventListener("mousedown", function(event){
-        if (color != null) event.target.style.backgroundColor = color;
-    });
-    fill_block.addEventListener("mouseover", function(event){
-        if (mousedown && color != null) event.target.style.backgroundColor = color;
-    });
-}
+let paintBoard = document.getElementsByClassName("board");
+console.log(paintBoard);
 
+clearingAll = () => {
+  for (let board of paintBoard) {
+    board.style.background = "white";
+  }
+};
 
-
-
-// let color = null;
-// let mousedown = false;
-
-// let body = document.getElementsByTagName("body")[0];
-// let color_blocks = document.querySelectorAll("#sidebar > *");
-// let fill_blocks = document.querySelectorAll("#main > *");
-// let clear_button = document.getElementsByTagName("button")[0];
-
-// clear_button.addEventListener("click", function(){
-//     for (fill_block of fill_blocks){
-//         fill_block.style.backgroundColor = "white";
-//     }
-// });
-
-// body.addEventListener("mousedown", function(){
-//     mousedown = true;
-// })
-
-// body.addEventListener("mouseup", function(){
-//     mousedown = false;
-// })
-
-
-// for (color_block of color_blocks){
-//     color_block.addEventListener("click", function(event){
-//         color = event.target.style.backgroundColor;
-//     });
-// }
-
-// for (fill_block of fill_blocks){
-//     fill_block.addEventListener("mousedown", function(event){
-//         if (color != null) event.target.style.backgroundColor = color;
-//     });
-//     fill_block.addEventListener("mouseover", function(event){
-//         if (mousedown && color != null) event.target.style.backgroundColor = color;
-//     });
-// }
-
+clearBtn.addEventListener("click", clearingAll);
 

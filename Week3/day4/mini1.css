@@ -1,0 +1,33 @@
+body{
+	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU2-jD0Vrzw_1GgQGTzRzpcJXjwoJ6z1LIxw&usqp=CAU);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+.drum span {
+    color: #ffcc02;
+    font-size: 1em;
+}
+.drum {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    height: 100px;
+    width: 100px;
+    color: white;
+    border: 2px solid #ffcc02;
+    background: rgba(0,0,0,0.5);
+    z-index: 100;
+    font-family: 'Roboto Mono', monospace;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
