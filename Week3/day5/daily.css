@@ -1,0 +1,41 @@
+.right{
+	display: grid;
+	float: left;
+	grid-template-rows: repeat(7, 1fr);
+	grid-template-columns: repeat(7, 1fr);
+	flex-grow: 4;
+	gap: 2px;
+	padding-left: 40px;
+	position: absolute;
+	padding-top: 5px;
+}
+.right>*{
+	
+	width: 30px;
+	height: 50px;
+
+}
+.left>*{
+	border:  1px solid gray;
+	text-align: left;
+	width: 30px;
+	height: 50px;
+	text-align: right;
+}
+.left{
+	float: left;
+}
+.top{
+	padding-left: 40px;
+	display: flex;
+
+	
+}
+.top >*{
+	/*text-align: center;*/
+	display:inline ;
+	border: 1px  solid gray;
+	width: 30px;
+	height: 30px;
+	/*padding-left:20px;*/
+}
