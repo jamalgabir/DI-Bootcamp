@@ -23,6 +23,9 @@
 	width: 30px;
 	height: 50px;
 	text-align: right;
+	padding-bottom: 0px;
+
+
 }
 .left{
 	float: left;
