@@ -25,7 +25,7 @@ for(let i = 0; i<7*7;i++){
     	newdivr.appendChild(txt)
     }
 
-	console.log(newdivr.length)
+	//console.log(newdivr.length)
 	right.appendChild(newdivr)
 	
 
