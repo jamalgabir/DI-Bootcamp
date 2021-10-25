@@ -373,24 +373,134 @@ const gameInfo = [
    items: ["book", "pen"]
  },
 ];
-//-------------------------------------------------------
-gameInfo.forEach((element,i,index) =>{
-	let result = index[i].username +="!"
-	// console.log(result)
-	let high= [];
-	 var scoreRe = (index[i].score>5)? high+=index[i].username:' '
-    console.log(scoreRe);
-})
 
+//-------------------------------------------------------
 // gameInfo.forEach((element,i,index) =>{
-// 	var myInt = index[i].score
-// 	var totle = 0
-// 	for(let g of myInt){
-// 		totle+=g
-// 		console.log(totle)
-// 	}       
+// 	index[i].username +="!"
+// 	console.log(index[i].username)
+// 	let v = []
+// 	let score = index[i].score
+//     console.log(v+=score)
+// 	//console.log(score)
 // })
 
 
+// function test(user){
+// 	let div = document.getElementsByClassName("container")[0]
+// 	let p = document.createElement("p")
+// 	p.textContent=`hello ${user}`
+// 	div.appendChild(p)
+// }
+// test("jsmsl");
+
+// First Part
+// 1. Create a function named `starWars` that takes no parameter.
+// 2. The function should declare a variables `characters` equal to an empty array
+// 3. In the startWars function, create a function named `createCharacter`.
+// It receives two parameters, the first name and last name of a character.
+// If the character doesn't have a last name, the default should be "Smith"
+// 4. The createCharacter function should console.log the fullname of the character,
+// and push it to the `characters` array.
+// 5. Call the `createCharacter` function a few times inside the starWars function
+// and console.log the `characters` array
+// Second Part
+// 6. Change the `starWars` function, to take one parameter, the name of the
+// spaceship the characters are in
+// 7. The `createCharacter` function should now console.log the fullname and spaceship
+// of the character
+// 8. Call the `starWars` function once with the spaceship "The Devastator", and another times
+// with the spaceship "Republic Attack Cruiser". what happens?
+
+// function starWars(call){
+// 	let characters = ""
+// 	function createCharacter(firstname,lastname="Smith"){
+// 		console.log([characters+=firstname,lastname])
+// 	}
+// 	createCharacter("tom");
+// 	createCharacter("tom");
+// 	createCharacter("tom","jamal");
+
+// }
+// starWars("j");
 
 
+//=-------------------------------------
+//-----------------------
+// CLOSURE
+//------------------------
+
+// let name = "John";
+
+// function checkName() {
+//     let nameUppercase = name.toUpperCase();
+//     console.log("in outer", nameUppercase)
+
+//     function addExclamation() {
+//         nameUppercase += "!";
+//         console.log("in inner,", nameUppercase);
+//     };
+ 
+//     return addExclamation
+// }
+
+//let inner = checkName(); // => JOHN
+// THE INNER FUNCTION, EVEN IF CALLED IN THE GLOBAL SCOPE
+// STILL HAS ACCESS TO THE SCOPE OF THE OUTER FUNCTION
+// inner() // => JOHN!
+// inner() //=> JOHN!!
+
+
+
+//OTHER EXAMPLE
+
+// function multiply(number) {
+//     //"private" variables
+//     let myNumber = number;
+//     console.log("in outer", myNumber)
+
+//     function numberToMultiply (n) {
+//         myNumber *= n;
+//         console.log("in inner,", myNumber);
+//     };
+ 
+//     return numberToMultiply;
+// }
+
+// let multiplication = multiply(10); 
+// console.log("multiplication is equal to : " , multiplication) 
+// // //reference of the numberToMultiply function
+// multiplication(2)
+// //calling the inner function 
+
+// // the same as 
+// multiply(10)(2)
+
+// Exercise 1
+// Write a function called specialMultiply which accepts two parameters.
+// If the function is passed both parameters,
+// it should return the product of the two.
+// If the function is only passed one parameter -
+// it should return a function which can later
+// be passed another parameter to return the product.
+// You will have to use closure and arguments to solve this.
+// Examples:
+// specialMultiply(3,4); // 12
+//specialMultiply(3)(4); // 12
+//specialMultiply(3); // function(){}....
+function specialMultiply(one,tow=0){
+	let sum1 = one;
+	let sum2 = tow;
+    console.log(sum1*sum2)
+	function second(n){
+		let lol = n*=sum1
+		console.log(lol)
+	}
+	return second;
+
+}
+specialMultiply(3,4);
+specialMultiply(3)(4);
+// specialMultiply(3)(4);
+// specialMultiply(3);
+
+//console.log(newfunc);
