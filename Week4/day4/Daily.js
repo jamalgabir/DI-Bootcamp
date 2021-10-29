@@ -11,59 +11,23 @@ class Video{
 
 	}
 }
-let Video1 = new Video('Funny Show','Davi','2:20')
 
+let Video1 = new Video('Funny Show','Davi','2:20')
 let Video2 = new Video('Discovery Channal','john','1:03');
 Video2.watch();
 Video1.watch();
 
 
 
+const myVideo =[['Discovery','Smath','2:09'],
+               ['TV Show','Roony','2:09'],
+               ['Action','Dani','8:09'],
+               ['Drama','Davi','3:09'],
+               ['Cenima','Jack','0:09']];
 
+let all = myVideo.forEach((v,i) => v);
+console.log(all);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const myVideo =[{'National','Smath','2:09'},
-//             {'TV Show','Roony','2:09'},
-//             {'Action','Dani','8:09'},
-//             {'Drama','Davi','3:09'},
-//             {'Cenima','Jack','0:09'}];
-// for(v of myVideo){
-// 	let all = new Video(v.toString())
-// 	console.log(all)
-// }
 
 
 
