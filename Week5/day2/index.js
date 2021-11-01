@@ -28,21 +28,21 @@
 // divide(12,2);
 //------------------------------------------------------
 
-let xml = new XMLHttpRequest();
-xml.open('GET','https://api.giphy.com/v1/gifs/search?q=hilarious&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My');
-xml.send();
-xml.onload = function(){
-	if(xml.status !=200){
-		console.log('some thing wrong')
+// let xml = new XMLHttpRequest();
+// xml.open('GET','https://api.giphy.com/v1/gifs/search?q=hilarious&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My');
+// xml.send();
+// xml.onload = function(){
+// 	if(xml.status !=200){
+// 		console.log('some thing wrong')
 	
-	}else{
-		console.log('finshed')
-		let response = JSON.parse(xml.response)
-		console.log(response)
+// 	}else{
+// 		console.log('finshed')
+// 		let response = JSON.parse(xml.response)
+// 		console.log(response)
 		
 
-	}
-}
+// 	}
+// }
 
 // //first function 
 // const displayError = (xml) => {
@@ -70,12 +70,13 @@ xml.onload = function(){
 
 
 //----------------------------------------------------
-// let xhr = new XMLHttpRequest();
-// //2. Set the request
-// xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
-// //4. Send the request
-// xhr.send();
-// //5. when the request is complete and the response is fully downloaded.
+let xhr = new XMLHttpRequest();
+//2. Set the request
+xhr.open('GET', "https://api.giphy.com/v1/stickers/search&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My");
+//4. Send the request
+xhr.send();
+console.log(xhr);
+//5. when the request is complete and the response is fully downloaded.
 // xhr.onload = function() {
 // 	if (xhr.status != 200) {
 // 	 	console.log("error status")

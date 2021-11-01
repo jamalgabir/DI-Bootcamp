@@ -1,0 +1,46 @@
+console.log('work');
+
+let APIKEY = "hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My";
+      // you will need to get your own API KEY
+      // https://developers.giphy.com/dashboard/
+      document.addEventListener("DOMContentLoaded", init);
+      function init() {
+        document.getElementById("btnSearch").addEventListener("click", ev => {
+          ev.preventDefault(); //to stop the page reload
+          let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=1&q=`;
+          let str = document.getElementById("search").value.trim();
+          url = url.concat(str);
+          console.log(url);
+          fetch(url)
+            .then(response => response.json())
+            .then(content => {
+              //  data, pagination, meta
+              console.log(content.data.bitly_gif_url);
+              //console.log("META", content.meta);
+              let fig = document.createElement("div");
+              fig.id = 'div1';
+              let img = document.createElement("img");
+              let fc = document.createElement("p");
+              console.log(content.data.bitly_gif_url);
+              img.src = content.data[0].images.downsized.url;
+              img.alt = content.data[0].title;
+              fc.textContent = content.data[0].title;
+              fig.appendChild(img);
+              fig.appendChild(fc);
+              let btn1 = document.createElement('button');
+              btn1.id = 'btn2';
+              btn1.textContent='Delet'
+              fig.appendChild(btn1);
+              let out = document.querySelector(".out");
+              out.insertAdjacentElement("afterbegin", fig);
+              document.querySelector("#search").value = "";
+            })
+            .catch(err => {
+              console.error(err);
+            });
+
+
+
+
+        });
+      }
