@@ -9,5 +9,11 @@ xml.onload = function(){
 	}else{
 		let response = JSON.parse(xml.response)
 		console.log('Here the result: ',response)
+		
 	}
 }
+
+//---------------------------------------------
+
+
+
