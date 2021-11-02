@@ -70,12 +70,12 @@
 
 
 //----------------------------------------------------
-let xhr = new XMLHttpRequest();
-//2. Set the request
-xhr.open('GET', "https://api.giphy.com/v1/stickers/search&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My");
-//4. Send the request
-xhr.send();
-console.log(xhr);
+// let xhr = new XMLHttpRequest();
+// //2. Set the request
+// xhr.open('GET', "https://api.giphy.com/v1/stickers/search&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My");
+// //4. Send the request
+// xhr.send();
+// console.log(xhr);
 //5. when the request is complete and the response is fully downloaded.
 // xhr.onload = function() {
 // 	if (xhr.status != 200) {
@@ -112,3 +112,16 @@ console.log(xhr);
 // 	h2.style.backgroundColor = 'pink';
 // 	error.appendChild(h2);
 // }
+let formData = new FormData(document.forms.person);
+console.log(formData);
+
+// add one more field
+formData.append("middle", "Lee");
+console.log(formData);
+
+// send it out
+let xhr = new XMLHttpRequest();
+xhr.open("POST", "https://javascript.info/article/xmlhttprequest/post/user");
+xhr.send(formData);
+
+xhr.onload = () => console.log(xhr.response);
