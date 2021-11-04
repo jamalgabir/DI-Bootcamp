@@ -1,4 +1,5 @@
 console.log('it is work');
+(function (){
 //------------------------------------------------------
 const promise1 = new Promise((resolve, reject)=>{
 	resolve(99)
@@ -12,10 +13,11 @@ const promise2 = new Promise((resolve, reject)=>{
 const promise3 = new Promise((resolve, reject)=>{
 	setTimeout(resolve,100,"fooo")
 });
-
+//--------------------------------------------
 Promise.all([promise1,promise2,promise3])
 .then(result =>{
 	console.log(result)
 })
 .catch(() =>console.log(`There is problem please fixed !`));
 
+}());
