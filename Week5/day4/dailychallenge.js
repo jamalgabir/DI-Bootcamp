@@ -1,23 +1,20 @@
 console.log('it is work');
-(function (){
+
+
+
+
 //------------------------------------------------------
-const promise1 = new Promise((resolve, reject)=>{
-	resolve(99)
-	// reject('There is Error in First');
-});
+const promise1 =  Promise.resolve(76);
+
 //-------------------------------------------------------
-const promise2 = new Promise((resolve, reject)=>{
-	resolve(69)
-});
+const promise2 = Promise.resolve(90);
+
 //---------------------------------------------
-const promise3 = new Promise((resolve, reject)=>{
-	setTimeout(resolve,100,"fooo")
-});
+const promise3 = new Promise(resolve=>setTimeout(resolve,100,'third'));
 //--------------------------------------------
 Promise.all([promise1,promise2,promise3])
 .then(result =>{
 	console.log(result)
 })
-.catch(() =>console.log(`There is problem please fixed !`));
+.catch(error =>console.log(`OOOPS!:${error}`));
 
-}());
