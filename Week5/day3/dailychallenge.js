@@ -1,155 +1,109 @@
-console.log('it work!');
-let a = ['jamal', 'gabir', 'arabi'];
+//part 1
 
-
-// Exercise Game - The word game
-// You need to create 4 functions, each of them return a promises
-// 1. The 1st function, receives 2 famous persons name from the user - if the names are not a string -> reject
-// 2. The 2nd function, receives a noun - if the noun is less than 3 letters - reject
-// 3. The 3rd function, receives a city - if the city doesn't start with an uppercase letter -> reject
-// 4. The 4st function, receives a verb (finishing with "ing") - if it doesn't end with "ing" -> reject
-// 5. The last function, is an async function - it receives all the above promises, and return a sentence with it
-// Ex: "Beyonce is playing football with Barack Obama in Paris"
-
-let gameOn = async () => {
-  let [name1, name2] = await isString();
-  let noun = await isNoun();
-  let city = await isCapital();
-  let verb = await isVerb();
-  return `${name1} is ${verb} ${noun} with ${name2} in ${city}`;
+makeAllCaps = (array) => {
+  console.log(array);
+  return array.map((v) => v.toUpperCase());
 };
 
-let isString = async () => {
-  let name1 = prompt("give me a famous person name");
-  let name2 = prompt("give me a 2nd name of a famous person");
-  if (typeof name1 === "string" && typeof name2 === "string") {
-    return [name1, name2];
-  } else {
-    throw new Error("they are not a string");
-  }
+sortWords = (array) => {
+  console.log(array);
+  return array.sort();
 };
 
-let isNoun = async () => {
-  let noun = prompt("give me a  noun");
-  if (noun.length >= 3) {
-    return noun;
-  } else {
-    throw new Error("the noun is too short");
-  }
-};
-
-let isCapital = async () => {
-  let city = prompt("give me a city");
-  if (city[0] === city[0].toUpperCase()) {
-    return city;
-  } else {
-    throw new Error("the city is not correct");
-  }
-};
-
-let isVerb = async () => {
-  let verb = prompt("give me a verb ending with ing");
-  verb = verb.toLowerCase();
-  let endV = verb.length - 3;
-  if (verb.includes("ing", endV)) {
-    return verb;
-  } else {
-    throw new Error("the verb is not good");
-  }
-};
-
-gameOn()
-  .then((res) => console.log(res))
+//testing
+Promise.resolve(["tomatoes", "avocados", "cucumbers"])
+  .then(makeAllCaps)
+  .then(sortWords)
+  .then((result) => console.log(result))
   .catch((err) => console.log(err));
 
-//-----------------------------------------------
-//----------------------------------------------
-// const learnJS = () => {
-//   return new Promise(resolve => {
-//     console.log("In LearnJS")
-    
-//     setTimeout(() => {
-//         console.log("--------I learn Javascript-------");
-//         resolve('Javascript DONE')
-//     },3000)
+// Part 2
 
-//   })
-// }
+let morse = `{
+    "0": "-----",
+    "1": ".----",
+    "2": "..---",
+    "3": "...--",
+    "4": "....-",
+    "5": ".....",
+    "6": "-....",
+    "7": "--...",
+    "8": "---..",
+    "9": "----.",
+    "a": ".-",
+    "b": "-...",
+    "c": "-.-.",
+    "d": "-..",
+    "e": ".",
+    "f": "..-.",
+    "g": "--.",
+    "h": "....",
+    "i": "..",
+    "j": ".---",
+    "k": "-.-",
+    "l": ".-..",
+    "m": "--",
+    "n": "-.",
+    "o": "---",
+    "p": ".--.",
+    "q": "--.-",
+    "r": ".-.",
+    "s": "...",
+    "t": "-",
+    "u": "..-",
+    "v": "...-",
+    "w": ".--",
+    "x": "-..-",
+    "y": "-.--",
+    "z": "--..",
+    ".": ".-.-.-",
+    ",": "--..--",
+    "?": "..--..",
+    "!": "-.-.--",
+    "-": "-....-",
+    "/": "-..-.",
+    "@": ".--.-.",
+    "(": "-.--.",
+    ")": "-.--.-"
+  }`;
 
-// THE SAME THING AS THE PROGRAM IN THE FUNCTION doSomethingNormalPromises
-// const doSomething =  async () => {
-//   let test = await learnJS()
-//   console.log("test : ", test)
-// }
-//--------------------
-// const learnJS = () => {
-//   return new Promise(resolve => {
-//   	console.log("In LearnJS")
-//     setTimeout(() => {
-//     	console.log("--------I learn Javascript-------");
-//     	resolve('Javascript DONE')
-// 	},3000)
-//   })
-// }
-
-// const learnReact = () => {-----
-//   console.log("In LearnReact")
-//   return new Promise(resolve => {
-//     setTimeout(() => {
-//     	console.log("--------I learn React 2 sec after JS-------")
-//     	resolve('REACT DONE')
-//     }, 2000)
-//   })
-// }
-
-// const doSomething = async () => {
-//   let javascript = await learnJS();
-//   console.log("hello")
-//   console.log(javascript)
-//   let react = await learnReact();
-//   console.log("bye")
-//   console.log(react)
-// }
-
-// console.log('Before')
-// doSomething()
-// console.log('After')
-
-
-// const doSomethingNormalPromises = () => {
-//   let javascript = learnJS();
-//   javascript.then((res) => console.log("res : ",res))
-// }
-
-// console.log('Before')
-// doSomething()
-// console.log('After')
-//---------------------------------------
-// const getToken = ()=> {
-//   return new Promise(x => {
-//     console.log('helloooooo')
-//   });
-// }
-// let name = prompt('enter name');
-// function messege(name){
-// 	return new Promise(name =>{
-// 		console.log(`hello,${name}`);
-// 	});
-// }
-// messege('jamal');
-// //getToken('cool');
-
-// async function case1() {
-//   var x = await getToken();
-//   let b = await messege();
-//   console.log(b);
-//   console.log(x);
-// };
-
-case1();
+let toJs = (json) => {
+  return new Promise((resolve, reject) => {
+    if (Object.entries(JSON.parse(json)).length > 0) {
+      resolve(JSON.parse(json));
+    } else {
+      reject("This is empty, what is this!");
+    }
+  });
+};
 
 
 
+let toMorse = (morseJS) => {
+  let wordArr = prompt(
+    "give me a word or a sentence and i will translate to morse"
+  )
+    .toLowerCase()
+    .replaceAll(" ", "")
+    .split("");
+  // console.log(wordArr);
+  return new Promise((resolve, reject) => {
+    if (wordArr.every((v) => v in morseJS)) {
+      // console.log(wordArr.map((v) => morseJS[v]));
+      resolve(wordArr.map((v) => morseJS[v]));
+    } else {
+      //   console.log(wordArr.every((v) => v in morseJS));
+      reject("The word/sentence is in correct, it have strange Chars");
+    }
+  });
+};
 
+let joinWords = (arr) => arr.join("\n");
 
-
+toJs(morse)
+  .then(toMorse)
+  // .then((res) => toMorse(res))
+  .then(joinWords)
+  // .then((res) => joinWords(res))
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
