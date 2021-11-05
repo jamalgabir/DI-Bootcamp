@@ -1,4 +1,5 @@
 console.log('hello');
+
 let previous = document.getElementById("previous");
 
 let next = document.getElementById("next");
@@ -25,9 +26,6 @@ let pokemonType;
 const getData = async () => {
 
 	loading();
-
-
-
 	try {
 
 		i = Math.floor((Math.random() * 807) + 1);
@@ -44,11 +42,7 @@ const getData = async () => {
 
 		console.log(info.id);
 
-			//console.log(info.id + 1);
-
-
-
-
+	    //console.log(info.id + 1);
 		const name = await data.name;
 		const height = await data.height;
 		const weight = await data.weight;
