@@ -1,80 +1,48 @@
 body{
-	margin: 0;
-	background-image: url(https://image.cnbcfm.com/api/v1/image/105991548-1561646968728gettyimages-1157890006.jpeg?v=1623719373&w=1600&h=900);
-    background-repeat: no-repeat;
+    margin:0px;
+    background-image: url("https://images.unsplash.com/photo-1459257831348-f0cdd359235f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80");
     background-size: cover;
+    font-family: 'Poppins', sans-serif;
 }
-#title{
-	color: white;
-	text-align: center;
+
+
+
+#main{
+
+    display:flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items:center;
+    height:80vh;
+    width:70vw;
+    margin: 10vh auto;
+    color:white;
+    font-size:1.7em;
+    border:1px solid black;
+    background:rgba(61, 90, 118, 0.6);
+    border-radius: 10px;
 
 }
-#browser{
-	background-color: hsla(50, 33%, 25%, 0.50);  /* 100% transparent */
-    background-color: rgba(117, 190, 218, 0.2);  /* 100% transparent */
-    color: white;
+
+input, select{
+    font-size:1.2em;
 }
+
 #result{
-	margin-left: 160px;
-	width: 230px;
-	height: 20px;
-	margin-top: 100px;
-	border: 2px solid gray;
-	text-align: center;
-	color: white;
-	background-color: hsla(50, 33%, 25%, 0.50);  /* 100% transparent */
-    background-color: rgba(117, 190, 218, 0.5);  /* 100% transparent */
+    border:1px solid black;
+    border-radius:5px;
+    width:24vw;
+    text-align:center;
+    background:rgb(61, 90, 118)
+}
 
+h1{
+    font-size: 2em;
 }
-#title2{
-	color: white;
-	text-align: center;
-}
-#form1{
-	margin-left: 160px;
-}
-#form2{
-	margin-left: 160px;
-}
-#btn{
-	margin-left: 350px;
-	position: absolute;
-	/*border: 1px solid red;*/
-    
-}
-#input1{
-	position: absolute;
-	color: white;
 
-	text-align: center;
-	margin-left: 160px;
-	/*border: 1px solid red;*/
-	background-color: hsla(50, 33%, 25%, 1.00);  /* 100% transparent */
-    background-color: rgba(117, 190, 218, 0.2);  /* 100% transparent */
-   
-   
-}
-#title3{
-	color: white;
-	text-align: center;
-}
-#amount{
-	color: white;
-	text-align: center;
-}
-#body{
-	
-    
-    background-color: #11ffee00;  
-
-    background-color: transparent;
-    margin-top: 50px;
-
-    background-color: hsla(50, 33%, 25%, 0.50);  /* 100% transparent */
-    background-color: rgba(117, 190, 218, 0.2);  /* 100% transparent */
-	height: 600px;
-	width: 500px;
-	margin: auto;
-	border: 2px solid red;
-
+#convert{
+    border:1px solid black;
+    background:rgb(61, 90, 118);
+    color:white;
+    stroke:white;
 }

@@ -1,56 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Document</title>
 </head>
 <body>
-	<div id="body">
-		<h1 id="title">Currency Converter</h1>
-		<h2 id="title2">From:</h2>
-		<form id="form1"  method="get">
-         
-           <input list="browsers2" name="browse" id="browser1">
-           <datalist id="browsers2">
-            <option value="USDAED">
-            <option value="USDAFN">
-            <option value="USDALL">
-            <option value="USDAMD">
-            <option value="USDANG">
-            <option value="USDAOA">
-           	<option value="USDARS">
-           	<option value="USDAUD">
-           	<option value="USDAWG">
-            <option value="USDAZN">
+    <section id="main">
 
-          </datalist>
-       </form>
+        <h1>Currency Converter</h1>
 
-       <h2 id="title3">To:</h2>
+        <h2>
+            From:
+        </h2>
 
-        <form id="form2"  method="get">
-         
-           <input list="browsers1" name="browser1" id="browser">
-           <datalist id="browsers1">
-             <option value="usdils">
-             <option value="Fir">
-             <option value="Chrome">
-             <option value="Opera">
-             <option value="Safari">
-          </datalist>
-          
+        <select name=from  id="from"></select>
+        
+
+        <h2>
+            To:
+        </h2>
+        <select name=to id="to"></select>
+        
+
+        <h2>
+            Amount:
+        </h2>
+        
+        <form id=conForm>
+        <input type="text" id="amount" placeholder="how much money to convert">
+        <input type="submit" value="convert" id="convert"></div>
         </form>
 
-       <h2 id="amount">Amount:</h2>
-       <input id="input1" type="text" name="number">
-       <button id="btn" type='submit'>Convert</button>
-       <div id="result"></div>
-       
-       	
-       
-	</div>
-    <script type="text/javascript" src="index.js"></script>
+        <h3 id="result">Total</h3>
+
+
+    </section>
+
+
+    <script src="index.js"></script>
 </body>
 </html>
