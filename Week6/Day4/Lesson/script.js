@@ -77,6 +77,7 @@ let firstInput = document.getElementById("key");
 let secondInput = document.getElementById("value");
 let results = document.getElementById("results");
 
+
 let arr = JSON.parse(localStorage.getItem("userDetails")) || [];
 
 const addItem = (e) => {
@@ -93,6 +94,7 @@ const addItem = (e) => {
 
 const displayItem = () => {
 	let res = JSON.parse(localStorage.getItem("userDetails"));
+	console.log(res);
 
 	for (const elem of res) {
 		let p = document.createElement("p");
