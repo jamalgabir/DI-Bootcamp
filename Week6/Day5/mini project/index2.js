@@ -3,33 +3,30 @@ console.log('work');
 (function (){
 	let info = JSON.parse(localStorage.getItem('myitem'));
 	let cont = document.getElementById('container');
-
-    //console.log(info.length)
-
+    
 	const display = () =>{
-	// e.preventDefault();
-	    //checkfunc()
-
-        //for(let i =0;i<info.length;i++){
-        	//console.log(info[i])
 	        for(let item of info){
-	        	// for(let i =0;i<info.length;i++){
-	        	//console.log(item)
 	        	let end = item['End date and time']
 	        	let tatus = item['Status']
 		        let name = item['name']
 		        let desc = item['Description']
 		        let start = item['Start date and time']
-		        let now = new Date()
+		        
                 let en = new Date(end)
 		        let now1 = en.getDate()
                 let now2 = en.getMonth()
                 let now3 = en.getFullYear()
                 let ful = (now1+now2+now3)
+                
+                let now = new Date()
+
+                let nowa = now.getDate()
+                let nowb = now.getMonth()
+                let nowc = now.getFullYear()
 		        
 		        
 		        let st = new Date(start)
-                //console.log(st)
+                
 
 		        let day = st.getDate()
 		        let month = st.getMonth()
@@ -44,8 +41,7 @@ console.log('work');
                 let s = addZero(st.getSeconds());
                 let time = `${h}:${m}`;
 		        //console.log(day,month,year)
-		        
-
+		       
 		        let div = document.createElement('div')
 	            let title = document.createElement('h2')
                 let p1 = document.createElement('p')
@@ -53,11 +49,22 @@ console.log('work');
                 let des = document.createElement('p')
                 let check = document.createElement('input')
                 // let check2 = document.createElement('input')
-                
+                let ed = document.createElement('p')
+                let ok = document.createElement('p')
+                ok.textContent = 'Save'
+                ok.setAttribute('id','okbtn')
+
+
+                ed.textContent='Edit'
+                ed.setAttribute('id','edit')
+                let can = document.createElement('p')
+                can.setAttribute('id','cancel');
+                can.textContent= 'x'
                 let lable = document.createElement('lable')
                 lable.textContent = 'Complete:'
                 // let lable2 = document.createElement('lable')
                 // lable2.textContent = 'Not Complete'
+
 
                 // check2.setAttribute('type','checkbox')
                 // check2.setAttribute('id','ch2')
@@ -80,9 +87,9 @@ console.log('work');
                 
                 //descrip()
                 title.textContent = `${name}`;
-		        p1.textContent =`Starting ${day}.${month}.${year} ${time}`
+		        p1.textContent =`Start On ${day}.${month}.${year} ${time}`
 		        p2.textContent =`${left} Days Left To Complete`;
-
+                div.appendChild(can)
 		        div.appendChild(title);
 		        div.appendChild(p1);
 		        div.appendChild(p2);
@@ -94,27 +101,69 @@ console.log('work');
 		        //div.addEventListener('click',descrip)
 		        div.appendChild(lable)
 		        div.appendChild(check)
-		        // div.appendChild(lable2)
-		        // div.appendChild(check2)
-		        let ch1 = document.getElementById('myCheck');
-		        //ch1.setAttribute('onclick','hh()');
-                ch1.addEventListener('onclick',hh);
-                //console.log(ch1)
-                function hh(e){
+		        div.appendChild(ed)
+		        div.appendChild(ok)
+                let arr = JSON.parse(localStorage.getItem('myitem')) ||[];
+                
+                div.addEventListener('ondblclick',function(e){
+                	// e.preventDefault()
+                	console.log(div)
+                	title.setAttribute('contentEditable','true')
+                    title.focus();
+                    p1.setAttribute('contentEditable','true')
+                    ed.style.display = 'none'
+                    ok.style.display='block'
+                    check.style.display='none'
+                    lable.textContent=''
+                })
+
+                ed.addEventListener('click',function(e){
+                    title.setAttribute('contentEditable','true')
+                    title.focus();
+                    p1.setAttribute('contentEditable','true')
+                    ed.style.display = 'none'
+                    ok.style.display='block'
+                    check.style.display='none'
+                    lable.textContent=''
+                    
+                	console.log()
+                })
+                
+                ok.addEventListener('click',function(){
+                	title.removeAttribute('contentEditable','true')
+                	ok.style.display='none'
+                	check.style.display='inline'
+                	ed.style.display = 'block'
+                	lable.textContent='Complete'
+                })
+
+		        can.addEventListener('click',function(e){
+		        	let com = confirm('Are you Sure Want Delet This Event ?')
+		        	if(com==true){
+		        		e.target.parentElement.remove()
+		        	}else if(com==false){
+		        		//console.log('no')
+		        	}
+		        })
+		        
+                check.addEventListener('click',function(e){                	
+                	//console.log(e.target)
                 	//e.preventDefault()
-
-                	console.log(e.target.parentElement)
-                	if(ch1.checked === true){
-                        console.log(ch1.checked)         	  
-                	    e.target.parentElement.style.background = 'red'               	   
-
+                	if(check.checked === true){
+                        //console.log(check.checked)
+                        console.log('yes')         	  
+                	    e.target.parentElement.style.background = 'orange'
+                	    p2.textContent = 'This Event Completed'
+                	    //check.style.display = 'none'
+                	    lable.textContent = 'Cancel'
                 	}
-                	else if(ch1.checked === false){
-                		console.log(ch1.checked)
-                		
+                	else if(check.checked === false){
+                		console.log('no')
+                		p2.textContent = `${left} Days Left To Complete`;
+                        lable.textContent='Complete'
 		                e.target.parentElement.style.background = 'darkblue'
                 	}
-                }
+                })
                 
              
 

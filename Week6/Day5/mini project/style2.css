@@ -1,6 +1,6 @@
 #container {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
 
   /*background-image: url("https://3.bp.blogspot.com/-piZWCW2uUbg/W2fPXxkWZgI/AAAAAAAAOu0/eydmMjTIqcwLMHEEr2H7imqoRTxMw4o9QCLcBGAs/s1600/among_trees_night_dribbble.png");
@@ -17,10 +17,41 @@
 
   margin: 20px auto;
   padding:20px;
-  
 
+}
+#edit{
+  background: lightskyblue;
+  width: 50px;
+  margin: auto;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+#okbtn{
+  display: none;
+  background: green;
+  width: 50px;
+  margin: auto;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+}
 
-
+#cancel{
+  float: right;
+  margin-top: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+  background: white;
+  width: 20px;
+  height: 20px;
+  color: red;
+  font-size: 15px;
+  /*border-radius: 5px;*/
+  text-align: center;
+}
+#myCheck{
+  cursor: pointer;
 }
 #des{
   display:none;
@@ -28,7 +59,7 @@
   text-align: center;
 }
 #post{
-  cursor: pointer;
+  /*cursor: pointer;*/
   background: darkblue;
   margin: auto;
   width: 250px;

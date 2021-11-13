@@ -41,9 +41,7 @@ let obj;
 		    localStorage.setItem('myitem',JSON.stringify(arr))
 		    obj = JSON.parse(localStorage.getItem('myitem'))
 		    console.log(obj)
-		//localStorage.setItem('myitem',JSON.stringify(arr))
-
-		//console.log(`v1:${value1.value}\n v2:${value2.value}\n v3:${value3.value}\n v4:${value4.value}`)
+		
      
             form.reset();
 	    }
