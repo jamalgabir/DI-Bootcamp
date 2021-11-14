@@ -86,6 +86,9 @@ console.log('work');
                 //console.log(start-end)
                 
                 //descrip()
+                title.setAttribute('id', 'tit')
+                
+                //console.log(first.nodeValue);
                 title.textContent = `${name}`;
 		        p1.textContent =`Start On ${day}.${month}.${year} ${time}`
 		        p2.textContent =`${left} Days Left To Complete`;
@@ -106,7 +109,7 @@ console.log('work');
                 let arr = JSON.parse(localStorage.getItem('myitem')) ||[];
                 
                 div.addEventListener('ondblclick',function(e){
-                	// e.preventDefault()
+                	e.preventDefault()
                 	console.log(div)
                 	title.setAttribute('contentEditable','true')
                     title.focus();
@@ -128,10 +131,13 @@ console.log('work');
                     
                 	console.log()
                 })
-                
-                ok.addEventListener('click',function(){
+                let first = document.getElementById('tit');
+                ok.addEventListener('click',function(e){
+                    
                 	title.removeAttribute('contentEditable','true')
                 	ok.style.display='none'
+                    let newv1 = first.firstChild.nodeValue;
+                    //console.log(newv1)
                 	check.style.display='inline'
                 	ed.style.display = 'block'
                 	lable.textContent='Complete'
