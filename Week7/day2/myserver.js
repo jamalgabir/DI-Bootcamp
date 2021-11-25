@@ -16,7 +16,7 @@ app.get('/items',(req,res)=>{
 	res.send(`<h3>${m}</h3>`)
 
 });
-app.listen(500,()=>{
+app.listen(5000,()=>{
 	console.log('ok')
 });
 app.get('/items/:id',(req,res)=>{

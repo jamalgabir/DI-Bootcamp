@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #eee;
+}
+.center {
+  color: rgb(14, 169, 207);
+}
+
+.todo-app {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 10px 20px 10px;
+  text-align: center;
+}
+
+.collection-item {
+  background: #fff;
+  border: solid 0.5rem gray;
+  padding: 20px;
+  text-align: left;
+}
+
+/* .collection {
+  border: gray 1px solid;
+} */
+
+.collection-item span:hover {
+  cursor: pointer;
+  text-decoration: line-through;
+}
+
+form {
+  margin: 20px 10px;
+}
+#input {
+  text-align: center;
+}
