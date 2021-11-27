@@ -20,11 +20,11 @@ class App extends Component {
   handleClick = id => {
     this.shuffleArray();
     this.handleScore(id);
-    console.log(this.state.timesClicked);
+    console.log(this.state.Clicked);
   };
 
   handleScore = id => {
-    this.state.characters.forEach(element => {
+    this.state.characters.superheroes.forEach(element => {
       if (id === element.id && element.clicked === false) {
         element.clicked = true;
         this.setState({ Clicked: false });
@@ -35,38 +35,30 @@ class App extends Component {
         }
         this.setState({ currentScore: 0 });
         this.setState({ Clicked: true });
-        this.state.characters.forEach(element => (element.clicked = false));
-        console.log(this.state.characters);
+        this.state.characters.superheroes.forEach(element => (element.clicked = false));
+        console.log(this.state.characters.superheroes);
       }
     });
   };
-
   shuffleArray = () => {
-    // Shuffle array of objects
-    const shuffledArr = this.shuffle(this.state.characters);
-    // Setting 'shuffledArr' as the new state
+    
+    const shuffledArr = this.shuffle(this.state.characters.superheroes);
     this.setState({ shuffledArr });
   };
-
-  // handleIncrement increments this.state.currentScore by 1
   handleIncrement = () => {
-    // Using setState method to update component's state
+    
     this.setState({ currentScore: this.state.currentScore + 1 });
   };
-
-  // Function that takes an array as a parameter and shuffles it
   shuffle = array => {
     var currentIndex = array.length,
       temporaryValue,
       randomIndex;
-
-    // While there remain elements to shuffle...
     while (0 !== currentIndex) {
-      // Pick a remaining element...
+      
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
 
-      // And swap it with the current element.
+      
       temporaryValue = array[currentIndex];
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
@@ -82,7 +74,8 @@ class App extends Component {
           highScore={this.state.highScore}
         />
         <Jumbo />
-        {this.state.characters.map(character => (
+        {
+         this.state.characters.superheroes.map(character => (
           <CharacterCard
             Clicked={this.state.Clicked}
             handleClick={this.handleClick}
