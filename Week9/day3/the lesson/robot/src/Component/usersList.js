@@ -12,7 +12,9 @@ class UserList extends React.Component{
 
     }
     render(){
+        console.log(this.props)
         const {users,text}=this.props;
+        
         const filter = users.filter(item=>{
             return item.name.toLowerCase().includes(text.toLowerCase())
         })
