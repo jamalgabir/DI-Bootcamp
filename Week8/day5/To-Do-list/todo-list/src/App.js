@@ -10,7 +10,7 @@ class App extends Component {
   state={
     todos:[
       {id:1,content:'buy Some Watter from store'},
-      {id:2,content:'buy shocolat and milk'}
+      {id:2,content:'buy shocolat and milk originals'}
     ]
   }
 
