@@ -16,7 +16,7 @@ class App extends Component {
 
   componentDidMount() {
     
-    //localStorage.getItem('todos');
+    //localStorage.getItem('todos')
    }
   deletlist=(id)=>{
     const todos = this.state.todos.filter(todo =>{
