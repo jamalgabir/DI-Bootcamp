@@ -9,7 +9,7 @@ function FormComponent(props) {
           className="text"
           onChange={props.handleChange}
           name="firstName"
-          placeholder="First Name"
+          placeholder="FirstName"
           value={props.firstName}
         />
         <br />
