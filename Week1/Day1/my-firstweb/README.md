@@ -1,2 +1,0 @@
-# my-firstweb
-day1
