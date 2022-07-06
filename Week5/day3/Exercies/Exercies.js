@@ -1,4 +1,4 @@
-console.log('it work');
+
 function compareToTen(num){
 	return new Promise((resolve,reject)=>{
 		if(num>10){
